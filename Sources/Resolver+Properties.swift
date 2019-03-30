@@ -33,7 +33,7 @@ extension Resolver {
     /// - parameter loader: the loader to load properties into the container
     ///
     public func applyPropertyLoader(_ loader: PropertyLoader) throws {
-        let loadedProperties = try loader.load()
+        let loadedProperties = try loader.loadProperties()
         var properties = self.properties
         for (key, value) in loadedProperties {
             properties[key] = value

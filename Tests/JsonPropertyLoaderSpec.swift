@@ -17,13 +17,13 @@ class JsonPropertyLoaderSpec: QuickSpec {
         it("can handle missing resource") {
             let loader = JsonPropertyLoader(bundle: Bundle(for: type(of: self).self), name: "noexist")
             expect {
-                try loader.load()
+                try loader.loadProperties()
             }.to(throwError(errorType: PropertyLoaderError.self))
         }
         it("can handle invalid resource") {
             let loader = JsonPropertyLoader(bundle: Bundle(for: type(of: self).self), name: "invalid")
             expect {
-                try loader.load()
+                try loader.loadProperties()
             }.to(throwError(errorType: PropertyLoaderError.self))
         }
     }

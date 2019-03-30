@@ -17,7 +17,7 @@ class PlistPropertyLoaderSpec: QuickSpec {
         it("can handle missing resource") {
             let loader = PlistPropertyLoader(bundle: Bundle(for: type(of: self).self), name: "noexist")
             expect {
-                try loader.load()
+                try loader.loadProperties()
             }.to(throwError(errorType: PropertyLoaderError.self))
         }
         // No test for invalid since Xcode won't allow invalid plist files to be added to the bundle
